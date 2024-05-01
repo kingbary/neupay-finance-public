@@ -92,3 +92,14 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.react-international-phone-country-selector-button {
+  padding-block: 20px !important;
+  padding-inline: 10px !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+}
+
+.scroll-transition {
+  transition: scroll-behaviour 1s ease-in-out;
+}

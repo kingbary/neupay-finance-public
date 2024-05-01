@@ -1,20 +1,20 @@
-import { Poppins } from "next/font/google";
+import { Toaster } from "sonner";
+import { poppins } from "./fonts";
 import "./globals.css";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 export const metadata = {
   title: "Neupay Finance",
-  description: "Your all-in-one finace escrow",
+  description:
+    "Securing Transactions, Simplifying Trust: Your Escrow Solution.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={`${poppins.className} scroll-transition`}>
+        {children}
+      </body>
+      <Toaster position="top-right" />
     </html>
   );
 }

@@ -1,11 +1,11 @@
+"use client";
 import Image from "next/image";
 import React from "react";
-import { Button } from "./ui/button";
-import { MoveRight } from "lucide-react";
+import FormModal from "./FormModal";
 
 export default function AboutUs() {
   return (
-    <section className="flex flex-col gap-4 md:gap-6 items-center mt-12 md:mt-24 px-0 sm:px-5 md:px-5 xl:px-20 2xl:px-[102px]">
+    <section id="about-us" className="flex flex-col gap-4 md:gap-6 items-center mt-12 md:mt-24 px-0 sm:px-5 md:px-5 xl:px-20 2xl:px-[102px]">
       <div className="bg-gray-100 rounded-[9px] px-2 py-1">
         <p>About us</p>
       </div>
@@ -37,12 +37,7 @@ export default function AboutUs() {
           <p className="text-[28px] xl:text-[34px] 2xl:text-4xl font-medium">
             Your gateway to hassle-free deals
           </p>
-          <Button
-            variant="default"
-            className="flex items-center gap-2 font-normal w-[271px]"
-          >
-            Join waitlist <MoveRight />
-          </Button>
+          <FormModal className="items-center gap-2 font-normal w-[271px] mt-8 hidden md:flex" />
           <div className="flex items-center gap-2">
             <Image
               src={"/assets/images/group-img.png"}

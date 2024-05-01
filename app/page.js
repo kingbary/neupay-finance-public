@@ -19,7 +19,7 @@ export default function Home() {
         <AboutUs />
         <HowItWorks />
       </main>
-      <footer>
+      <footer className="bg-primary text-white px-5 xl:px-20 2xl:px-[102px] py-14 mt-28">
         <Footer />
       </footer>
     </>

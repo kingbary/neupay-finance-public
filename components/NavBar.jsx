@@ -2,8 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { Button } from "./ui/button";
-import { MoveRight } from "lucide-react";
+import FormModal from "./FormModal";
 
 export default function NavBar() {
   const [activeLink, setActiveLink] = useState("Home");
@@ -11,6 +10,16 @@ export default function NavBar() {
 
   const handleSetActiveLink = (link) => {
     setActiveLink(link);
+    const targetElement = document.getElementById(
+      link.toLowerCase().replace(" ", "-")
+    );
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
   };
 
   useEffect(() => {
@@ -71,7 +80,7 @@ export default function NavBar() {
                 }`}
               >
                 <Link
-                  href={"#"}
+                  href={"#about-us"}
                   onClick={() => handleSetActiveLink("About Us")}
                 >
                   About Us
@@ -85,7 +94,7 @@ export default function NavBar() {
                 }`}
               >
                 <Link
-                  href={"#"}
+                  href={"#how-it-works"}
                   onClick={() => handleSetActiveLink("How it works")}
                 >
                   How it works
@@ -94,12 +103,7 @@ export default function NavBar() {
             </ul>
           </div>
           <div className="relative hidden mdd:block">
-            <Button
-              variant="default"
-              className="flex items-center gap-2 font-normal"
-            >
-              Join waitlist <MoveRight />
-            </Button>
+            <FormModal className="flex items-center gap-2 font-normal" />
             <div className="h-[60px] w-[184px] bg-[#0B489D1C] rounded-[11px] absolute top-[4px] left-[4px] -z-10"></div>
           </div>
         </nav>
@@ -144,7 +148,7 @@ export default function NavBar() {
                 }`}
               >
                 <Link
-                  href={"#"}
+                  href={"#about-us"}
                   onClick={() => handleSetActiveLink("About Us")}
                 >
                   About Us
@@ -158,7 +162,7 @@ export default function NavBar() {
                 }`}
               >
                 <Link
-                  href={"#"}
+                  href={"#how-it-works"}
                   onClick={() => handleSetActiveLink("How it works")}
                 >
                   How it works
@@ -167,12 +171,10 @@ export default function NavBar() {
             </ul>
           </div>
           <div className="relative hidden mdd:block">
-            <Button
+            <FormModal
               variant="white"
               className="flex items-center gap-2 font-normal"
-            >
-              Join waitlist <MoveRight />
-            </Button>
+            />
             <div className="h-[60px] w-[184px] bg-white/50 rounded-[11px] absolute top-[4px] left-[4px] -z-10"></div>
           </div>
         </nav>
